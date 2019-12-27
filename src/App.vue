@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <pratice></pratice>
+    <p>{{parentmessage}}</p>
+    <pratice @finished="finished"></pratice>
     <listusingprops v-bind:artists = "artists"/>
   </div>
 </template>
@@ -28,9 +29,15 @@ export default {
         {name: 'Shatta-walle', genre: 'Reagae', country: 'Ghana'},
         {name: 'Khalid', genre: 'pop', country: 'United States'},
         {name: 'ed-Sheran', genre: 'pop', country: 'United Kingdom'}
-      ]
+      ],
+      parentmessage : "Maggie is back and she strong"
     }
-  }
+  },
+  methods : {
+    finished() {
+      this.parentmessage = 'I said , Maggie be strong and she back ma people'
+    }}
+
 }
 </script>
 
