@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <navigation></navigation>
     <p>{{parentmessage}}</p>
-    <pratice @finished="finished"></pratice>
+    <pratice @finished="finished">
+      <p>{{slotmsg}}</p>
+      <p>We are all trying to learn man</p>
+    </pratice>
     <listusingprops v-bind:artists = "artists"/>
   </div>
 </template>
@@ -10,9 +13,11 @@
 <script>
   import pratice from './components/pratice'
   import listusingprops from './components/listusingprops'
+  import navigation from './components/navigation'
 export default {
   name: 'app',
   components: {
+    navigation,
     pratice,
     listusingprops
   },
@@ -30,7 +35,8 @@ export default {
         {name: 'Khalid', genre: 'pop', country: 'United States'},
         {name: 'ed-Sheran', genre: 'pop', country: 'United Kingdom'}
       ],
-      parentmessage : "Maggie is back and she strong"
+      parentmessage : "Maggie is back and she strong",
+      slotmsg : "This is is a clear indication of using slots"
     }
   },
   methods : {
@@ -41,13 +47,18 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
+<style lang="scss">
+
+  @import "../foundation/css/app.css";
+  @import "../foundation/css/foundation.css";
+
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>

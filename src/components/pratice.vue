@@ -2,6 +2,7 @@
 <template>
     <div>
         <button @click="ok"> Click me</button>
+        <slot></slot>
     <h1>I am Maggie , I am really trying man</h1>
     <buttonmine></buttonmine>
 
