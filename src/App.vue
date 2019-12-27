@@ -1,47 +1,39 @@
 <template>
   <div id="app">
-    <navigation></navigation>
-    <p>{{parentmessage}}</p>
-    <pratice @finished="finished">
+    <navigation v-bind:navigations="navigations"/>
+    <banner></banner>
+    <learn @finished="finished">
       <p>{{slotmsg}}</p>
-      <p>We are all trying to learn man</p>
-    </pratice>
-    <listusingprops v-bind:artists = "artists"/>
+    </learn>
   </div>
 </template>
 
 <script>
-  import pratice from './components/pratice'
-  import listusingprops from './components/listusingprops'
+  import learn from './components/learnmore'
   import navigation from './components/navigation'
+  import banner from "./components/banner";
 export default {
   name: 'app',
   components: {
+    banner,
     navigation,
-    pratice,
-    listusingprops
+    learn,
   },
   data (){
     return {
-      artists: [
-        {name: 'Davido', genre: 'afrobeats', country: 'Nigeria'},
-        {name: 'Burna Boy', genre: 'afrobeats', country: 'Nigeria'},
-        {name: 'AKA', genre: 'hiphop', country: 'South-Africa'},
-        {name: 'Sarkodie', genre: 'hiphop', country: 'Ghana'},
-        {name: 'Stormzy', genre: 'hiphop', country: 'United Kingdom'},
-        {name: 'Lil Nas', genre: 'Country', country: 'United States'},
-        {name: 'Nasty C', genre: 'hiphop', country: 'South-Africa'},
-        {name: 'Shatta-walle', genre: 'Reagae', country: 'Ghana'},
-        {name: 'Khalid', genre: 'pop', country: 'United States'},
-        {name: 'ed-Sheran', genre: 'pop', country: 'United Kingdom'}
+      navigations: [
+        {name: 'The Company'},
+        {name: 'Our Team'},
+        {name: 'Our Solutions'},
+        {name: 'Media'},
+        {name: 'Contact'},
       ],
-      parentmessage : "Maggie is back and she strong",
-      slotmsg : "This is is a clear indication of using slots"
+      slotmsg : " "
     }
   },
   methods : {
     finished() {
-      this.parentmessage = 'I said , Maggie be strong and she back ma people'
+      this.slotmsg = 'The documentation is loading .. please wait'
     }}
 
 }
@@ -52,13 +44,11 @@ export default {
 
   @import "../foundation/css/app.css";
   @import "../foundation/css/foundation.css";
-
+  @import "./styles/_variables.scss";
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
     color: #2c3e50;
-    margin-top: 60px;
   }
 </style>
