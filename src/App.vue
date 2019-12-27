@@ -2,15 +2,14 @@
   <div id="app">
     <navigation v-bind:navigations="navigations"/>
     <banner></banner>
-    <learn @finished="finished">
+    <learnmore @finished="finished">
       <p>{{slotmsg}}</p>
-    </learn>
+    </learnmore>
     <tablayout></tablayout>
   </div>
 </template>
-
 <script>
-  import learn from './components/learnmore'
+  import learnmore from './components/learnmore'
   import navigation from './components/navigation'
   import banner from "./components/banner";
   import tablayout from "./components/tabslayout";
@@ -19,7 +18,7 @@ export default {
   components: {
     banner,
     navigation,
-    learn,
+    learnmore,
     tablayout,
   },
   data (){
@@ -38,13 +37,9 @@ export default {
     finished() {
       this.slotmsg = 'The documentation is loading .. please wait'
     }}
-
 }
 </script>
-
-
 <style lang="scss">
-
   @import "../foundation/css/app.css";
   @import "../foundation/css/foundation.css";
   @import "./styles/_variables.scss";

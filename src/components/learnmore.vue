@@ -14,12 +14,10 @@
         </div>
     </div>
 </template>
-
-
 <script>
     export default
     {
-        name: "pratice",
+        name: "learnmore",
         methods: {
             ok() {
                 this.$emit('finished')
@@ -27,7 +25,6 @@
         }
     }
 </script>
-
 <style lang="scss">
 #events
 {
@@ -46,5 +43,4 @@
 
     }
 }
-
 </style>
