@@ -5,6 +5,7 @@
     <learn @finished="finished">
       <p>{{slotmsg}}</p>
     </learn>
+    <tablayout></tablayout>
   </div>
 </template>
 
@@ -12,12 +13,14 @@
   import learn from './components/learnmore'
   import navigation from './components/navigation'
   import banner from "./components/banner";
+  import tablayout from "./components/tabslayout";
 export default {
   name: 'app',
   components: {
     banner,
     navigation,
     learn,
+    tablayout,
   },
   data (){
     return {
