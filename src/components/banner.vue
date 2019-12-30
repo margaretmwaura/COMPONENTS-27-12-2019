@@ -15,9 +15,7 @@
         </div>
     </div>
 </template>
-
 <script>
-
     import buttonmine from './button'
     export default {
         name: "banner",
@@ -31,9 +29,7 @@
         }
     }
 </script>
-
 <style lang="scss">
-
     #banner {
         width: 100%;
         height: 560px;
